@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-family: 'SignPainterHouseScript', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Right-to-Left Slideshow */
+@keyframes slide-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-right-to-left {
+  display: flex;
+  animation: slide-right-to-left 20s linear infinite;
+}
+
+/* Left-to-Right Slideshow */
+@keyframes slide-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left-to-right {
+  display: flex;
+  animation: slide-left-to-right 20s linear infinite;
+}
+
+/* Add fade effect for seamless transition */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.bg-gradient-to-l {
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+/* styles/globals.css or in a <style> tag */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@font-face {
+  font-family: 'SignPainterHouseScript';
+  src: url('/fonts/SignPainter-HouseScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
